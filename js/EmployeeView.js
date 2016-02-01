@@ -4,8 +4,6 @@ var EmployeeView = function(employee) {
         this.el = $('<div/>');
         this.el.on('click', '.change-pic-btn', this.changePicture);
     };
- 
-    this.initialize();
 	this.render = function() {
 	    this.el.html(EmployeeView.template(employee));
 	    return this;
@@ -34,6 +32,7 @@ var EmployeeView = function(employee) {
 	 
 	    return false;
 	};
+	this.initialize();
 }
  
 EmployeeView.template = Handlebars.compile($("#employee-tpl").html());
